@@ -133,7 +133,9 @@ class Spoilerplus {
 
             fs.writeFileSync(`${ROOT_DIR}/${i}.JPEG`, base64Image, 'base64');
 
-            images.push(`${process.env.APP_URL}/images/${path}/${i}.JPEG`);
+            images.push(`${
+                `http://${global.ip}:${process.env.PORT || 3000}`
+            }/images/${path}/${i}.JPEG`);
 
             await this.page.evaluate(() => {
                 window.scrollBy(0, window.innerHeight);

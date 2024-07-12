@@ -7,6 +7,11 @@ const dotenv = require('dotenv');
 const cron = require('node-cron');
 const fs = require('fs');
 const os = require('os');
+const { ip } = require('address');
+
+
+// set ip to global
+global.ip = ip();
 
 dotenv.config();
 
@@ -72,7 +77,7 @@ puppeteer.use(StealthPlugin());
 
 
     app.listen(process.env.PORT || 3000, () => {
-        console.log('Server is running on http://localhost:3000');
+        console.log(`Server is running on ${global.ip}:${process.env.PORT || 3000}`);
     });
 
     cron.schedule('*/30 * * * *', async () => {
