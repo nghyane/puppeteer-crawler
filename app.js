@@ -77,7 +77,9 @@ puppeteer.use(StealthPlugin());
 
 
     app.listen(process.env.PORT || 3000, () => {
-        console.log(`Server is running on ${global.ip}:${process.env.PORT || 3000}`);
+        console.log(`Server is running on ${
+            process.env.APP_URL || `http://${global.ip}:${process.env.PORT || 3000}`
+        }`);
     });
 
     cron.schedule('*/30 * * * *', async () => {

@@ -134,7 +134,7 @@ class Spoilerplus {
             fs.writeFileSync(`${ROOT_DIR}/${i}.JPEG`, base64Image, 'base64');
 
             images.push(`${
-                `http://${global.ip}:${process.env.PORT || 3000}`
+                process.env.APP_URL || `http://${global.ip}:${process.env.PORT || 3000}`
             }/images/${path}/${i}.JPEG`);
 
             await this.page.evaluate(() => {
