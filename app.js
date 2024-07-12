@@ -6,6 +6,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cron = require('node-cron');
 const fs = require('fs');
+const os = require('os');
 
 dotenv.config();
 
@@ -29,7 +30,8 @@ puppeteer.use(StealthPlugin());
             '--ignore-certificate-errors',
             '--disable-infobars',
             '--disable-features=site-per-process,TranslateUI,BlinkGenPropertyTrees,AudioServiceOutOfProcess,WebXR,WebXRGamepadSupport,OpenVR',
-        ]
+        ],
+        executablePath: os.platform() === 'linux' ? '/usr/bin/chromium-browser' : undefined
     });
 
     const spoilerplus = new Spoilerplus(browser);
