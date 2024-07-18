@@ -7,14 +7,14 @@ This project is a web crawler built using Puppeteer.
 To install and run this project, follow these steps:
 
 1. Clone the repository and navigate to the project directory:
-   
+ ```  
    git clone git@github.com:nghyane/puppeteer-crawler.git && cd puppeteer-crawler
-   
+ ```  
 
 2. Make the installation script executable and run it:
-   
+ ```  
    chmod +x install.sh && ./install.sh
-   
+ ```  
 
 The `install.sh` script will:
 - Update the system and install necessary dependencies
@@ -46,19 +46,19 @@ The `install.sh` script will:
 After installation, the application will be started automatically using pm2. You can manage the application using pm2 commands.
 
 To check the status of the application:
-
+```
 pm2 status
-
+```
 
 To stop the application:
-
+```
 pm2 stop app
-
+```
 
 To restart the application:
-
+```
 pm2 restart app
-
+```
 
 For more pm2 commands, refer to the [pm2 documentation](https://pm2.keymetrics.io/docs/usage/quick-start/).
 
