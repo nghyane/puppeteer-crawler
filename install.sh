@@ -1,3 +1,4 @@
+# git clone git@github.com:nghyane/puppeteer-crawler.git && cd puppeteer-crawler
 # add permission & run: chmod +x install.sh && ./install.sh
 
 sudo apt update
