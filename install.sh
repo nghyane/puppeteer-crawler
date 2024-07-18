@@ -6,15 +6,17 @@ sudo apt-get install -y gconf-service libasound2 libatk1.0-0 libcups2 libdbus-1-
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-source ~/.bashrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-nvm install 22.04
-nvm use 22.04
+nvm install 20
+nvm use 20
 
-npm install -g yarn
+npm install -g pnpm
 npm install -g pm2
 
-yarn install
+pnpm install
 
-pm2 start app.js --name "app" --watch --ignore-watch="node_modules" --no-daemon 
+pm2 start app.js --name "app"
 pm2 save
